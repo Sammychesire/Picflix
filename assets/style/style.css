@@ -74,10 +74,13 @@
 }
 .gallery{
     width: 100%;
-    padding: 40px;
+    padding: 30px;
     background: #fff;
-    columns: 4;
-    column-gap: 20px;
+    /* column-count: 4; */
+    /* column-gap: 5px; */ 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
 }
 .gallery-img{
     width: 100%;
