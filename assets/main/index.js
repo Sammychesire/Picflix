@@ -52,3 +52,21 @@
 
  getAllImages();
 
+
+ const preBtns = document.querySelector('.before-btn');
+ const nextBtns = document.querySelector('.after-btn');
+
+ preBtns.addEventListener('click', () => {
+    if(currentImage > 0){
+        currentImage--;
+        showPopup(allImages[currentImage]);
+    }
+ })
+
+
+ nextBtns.addEventListener('click', () => {
+    if(currentImage < allImages.length-1){
+        currentImage++;
+        showPopup(allImages[currentImage]);
+    }
+ })
