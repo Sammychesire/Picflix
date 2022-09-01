@@ -4,7 +4,8 @@
  const randomUrl = `https://api.unsplash.com/photos/random?client_id=${accessKey}&count=30`;
 
  const gallery = document.querySelector('.gallery')
-
+ 
+ let  currentImage = 0;
  let allImages;  //store all images
 
  function getAllImages(){
@@ -24,6 +25,28 @@
         img.src = item.urls.regular
         img.className = 'gallery-img'
          gallery.appendChild(img);
+
+         img.addEventListener('click', () => {
+             currentImage = index;
+             showPopup(item);
+         })
+
+
+     })
+ }
+
+ function showPopup(item){
+    let popup = document.querySelector('.image-popup');
+    const downloadBtn = document.querySelector('.download-btn');
+    const closeBtn = document.querySelector('.close-btn');
+    const image = document.querySelector('.large-img');
+    
+     popup.classList.remove('hide');
+     downloadBtn.href = item.links.html;
+     image.src =item.urls.regular;
+
+     closeBtn.addEventListener('click', () => {
+        popup.classList.add('hide')
      })
  }
 
