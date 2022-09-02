@@ -1,7 +1,10 @@
-
+let searchParam = location.search.split('=').pop();
+ 
  const accessKey = 'FFe9OwqmwBF2zbCZcibSgOqniyGYjNzymP_EOlEbsI4';
 
  const randomUrl = `https://api.unsplash.com/photos/random?client_id=${accessKey}&count=30`;
+
+ const searchUrl = `https://api.unsplash.com/search/photos?client_id=${accessKey}&query=${searchParam}&per_page=50`;
 
  const gallery = document.querySelector('.gallery')
  
@@ -12,12 +15,23 @@
      (fetch(randomUrl))
      .then((res) => res.json())
      .then((data) => {
-        console.log(data)
+        // console.log(data)
          allImages = data;
          createImages(allImages)
      });
     
  }
+
+ function searchAllImages(){
+    (fetch(searchUrl))
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data)
+        allImages = data.results
+        createImages(allImages)
+    });
+   
+}
 
  function createImages(data){
      data.forEach((item,index) => {
@@ -50,6 +64,12 @@
      })
  }
 
+ if(searchParam == ''){
+    getAllImages();
+ }else{
+    searchAllImages();
+ }
+ 
  getAllImages();
 
 
