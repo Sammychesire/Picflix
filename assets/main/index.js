@@ -1,4 +1,5 @@
-let searchParam = location.search.split('=').pop();
+document.addEventListener("DOMContentLoaded", function() {
+    let searchParam = location.search.split('=').pop();
  
  const accessKey = 'FFe9OwqmwBF2zbCZcibSgOqniyGYjNzymP_EOlEbsI4';
 
@@ -90,3 +91,4 @@ let searchParam = location.search.split('=').pop();
         showPopup(allImages[currentImage]);
     }
  })
+  });
