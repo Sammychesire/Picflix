@@ -58,4 +58,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 Sammy Chesire
 
 ## Support and contact details
+<<<<<<< HEAD
 Contact Sammy Chesire on email at (sammykirui18@gmail.com)
+=======
+Contact Sammy Chesire on email at (sammykirui18@gmail.com)
+>>>>>>> eecec5ff501269436a2539bbc3664699c8bde893
